@@ -70,7 +70,7 @@
 # numero = 0
 
 # if numero == 0:
-#     print("es cero") 
+#     print("es cero")
 # elif numero % 2 == 0:
 #     print("es par")
 # else:
@@ -96,7 +96,7 @@
 #     print ("Es impar")
 
 
-# 
+#
 # print ("Inicio Ternario Par, Impar")
 # numero = 2
 # opt_par = "El número es par"
@@ -225,10 +225,44 @@
 # #---
 # print(f"Ventilador: {ventilador}")
 
+# cesta = ['🍑','🍓','🍉','🍎']
+# print (cesta)
+# resultado = f"Hay {cesta.count('🍎')} manzanas" if '🍎' in cesta else cesta.extend(['🍎','🍎'])
+# print (resultado)
+# print (cesta)
 
+"""
+Ejercicio por una carpeta de retos fuera de plazo:
 
-cesta = ['🍑','🍓','🍉','🍎']
-print (cesta)
-resultado = f"Hay {cesta.count('🍎')} manzanas" if '🍎' in cesta else cesta.extend(['🍎','🍎'])
-print (resultado)
-print (cesta)
+Trabajas en un laboratorio de análisis de sangre. Tienes que determinar si un
+paciente tiene anemia o no.
+
+Para que un paciente tenga anemia, debe cumplir con las siguientes condiciones:
+- Si el paciente es hombre, su nivel de hemoglobina debe ser menor a 13.5 g/dL.
+- Si el paciente es mujer, su nivel de hemoglobina debe ser menor a 12 g/dL.
+- Si el paciente es niñ@, su nivel de hemoglobina debe ser menor a 11 g/dL.
+Para hacer tu trabajo mas fácil creaste un programa que recibe por teclado los
+siguientes datos:
+- Sexo del paciente (hombre, mujer).
+- Edad del paciente (niño: 0-12 años, adulto: 13 años o más).
+- Nivel de hemoglobina (en g/dL).
+- El programa debe imprimir "Anemia" si el paciente tiene anemia,
+    y "No Anemia" si no la tiene.
+
+Restricciones:
+- NO puedes utilizar sentencias de control (if, for, while).
+- NO puedes utilizar funciones (def).
+
+"""
+
+sexo = input("Sexo: ").lower()
+edad = int(input("Edad: "))
+nivel = float(input("Nivel Hemoglobina g/dL: "))
+umbral = (
+    13.5 * (sexo == "hombre" and edad >= 13)
+    + 12 * (sexo == "mujer" and edad >= 13)
+    + 11 * (edad < 13)
+)
+anemia = nivel < umbral
+estados = ["No", ""]
+print(f"{estados[anemia]}Anemia")
